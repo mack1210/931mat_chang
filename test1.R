@@ -1,36 +1,23 @@
-attach(mtcars)
-head(mtcars, n = 2)
+setwd("C:\\Users\\CHANGGYUNMA\\Desktop\\My Documents\\서울시립대학교\\2018년 1학기\\1. 전공\\통계학 개론 및 실습 (한상문 교수님)\\6주차")
+getwd()
 
-plot(mpg ~ disp, data = mtcars)
-plot(hp ~ disp, data = mtcars)
-tail(mtcars, n=3)
-mtcars
 
-plot(hp ~ disp, data=mtcars)
+data <- read.csv('lm_data.csv', header = T, stringsAsFactors = F)
 
-x = rnorm(1000)
-y = 2+2*x + rnorm(1000)
-plot(x,y, main = "plot (x-y)")
+co_var <- c() #covariance
+co_rel <-c() #correlation
 
-x = seq(-2,2, length = 10)
-y = x^2
-plot(x,y, type = 'p', main = "y = x^2")
+for(i in 1:4)
+{
+  co_var[i] <- cov(data[2*i-1],data[2*i])
+  co_rel[i] <- cor(data[2*i-1],data[2*i])
+}
 
-x = seq(-2,2, length = 10)
-y = x^2
+co_var
+co_rel
+
 par(mfrow = c(2,2))
-plot(x,y, type = 'p', main = "(a)")
-plot(x,y, type = 'b', main = "(b)")
-plot(x,y, type = 'l', main = "(c)")
-plot(x,y, type = 's', main = "(d)")
-
-plot(x,y, type = "b", lty = 3, main = "y = x^2")
-
-plot(x,y, type = "b", lty = 3, pch = 2, main = "y = x^2")
-plot(x = 1:25,y = rep(0, 25), pch = 1:25)
-plot(x,y, type = "b", lty = 3, pch = 2, col = "blue", main = "y = x^2")
-colors()[1:10]
-plot(x,y, type = "b", xlab = "xx", ylab = "yy", main = "y = x^2")
-xlim = c(-1,1), ylim = c(-1,1))
-plot(mpg~disp, data = cars, xlab = "displacement", ylab = "mile/gallon",
-     main = "scatter plot", pch = 20, col = 'darkblue')
+plot(data$x1,data$y1,main = "Scatter plot for (x1,y1)",xlab = 'x1',ylab = 'y1')
+plot(data$x2,data$y2,main = "Scatter plot for (x2,y2)",xlab = 'x2',ylab = 'y2')
+plot(data$x3,data$y3,main = "Scatter plot for (x3,y3)",xlab = 'x3',ylab = 'y3')
+plot(data$x4,data$y4,main = "Scatter plot for (x4,y4)",xlab = 'x4',ylab = 'y4')

@@ -1,0 +1,26 @@
+시간되면 아마존 웹서비스 해보기
+
+수업의 목표는 원래
+
+1. Data collection with R from the Web
+하루에 한번 url에 들어가서 데이터 프레임을 얻는다
+for문안에 sleep(3600) 3600초를 쉰다음에 반복문을 다시 실행
+
+2. Data preprocessing
+모은 데이터를 처리하는 것
+
+3. Analysis
+지금까지 통계학과에서 한 것(다른데서도 많이한다)
+
+4. Visualization
+지금 우리가 하고 있는 것
+결과를 analyse하고 result를 산출하는 것
+
+위 독립적인 1~4의 과정을 묶어서 5.
+5. R System -> Web publish(Web으로 쏴준다)
+
+Interactive system을 구축하는 것이 우리의 목표
+
+4 -> 2 -> 1 ->5 로 진행 (난이도 순서라고 보면 옳다)
+
+
